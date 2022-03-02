@@ -33,7 +33,7 @@ export const AdminProductScreen = () => {
    function deleteuser(id) {
     if (localStorage.getItem("Auth._Token") && localStorage.getItem("user")) {
       axios
-        .post(`http://localhost:5000/get/products/removeproduct/${id}`, {
+        .post(`https://ecommerce-backend-mongodb.herokuapp.com/get/products/removeproduct/${id}`, {
           AuthToken: localStorage.getItem("Auth._Token"),
           id: localStorage.getItem("user"),
         })

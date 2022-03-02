@@ -4,7 +4,7 @@ import {fetch_products_Request,fetch_products_success,fetch_products_error,fetch
 function fetchproducts(){
     return(dispatch)=>{
         dispatch(fetch_products_Request())
-        axios.get('http://localhost:5000/get/products')
+        axios.get('https://ecommerce-backend-mongodb.herokuapp.com/get/products')
         .then(res=>{
             const alldata=(res.data).map((data) =>(data))
             dispatch(fetch_products_success(alldata))
@@ -17,7 +17,7 @@ function fetchproductitem(id){
     //console.log('fetchproductid',id)
     return(dispatch)=>{
         dispatch(fetch_product_item_Request())
-        axios.get(`http://localhost:5000/get/products/${id}`)
+        axios.get(`https://ecommerce-backend-mongodb.herokuapp.com/get/products/${id}`)
         .then(res=>{
             dispatch(fetch_product_item_success(res.data))
         })
@@ -27,7 +27,7 @@ function fetchproductitem(id){
 
 function fetchCartItem(id,qty){
     return(dispatch)=>{
-        axios.get(`http://localhost:5000/get/products/${id}`)
+        axios.get(`https://ecommerce-backend-mongodb.herokuapp.com/get/products/${id}`)
         .then(res=>{
             const cartdata = res.data
             cartdata['qty']=qty
@@ -40,7 +40,7 @@ function fetchCartItem(id,qty){
 function fetchUserDetails(email,password){
     return(dispatch) => {
         dispatch(user_login_request())
-        axios.post('http://localhost:5000/auth/user',{
+        axios.post('https://ecommerce-backend-mongodb.herokuapp.com/auth/user',{
             email:email,
             password:password
         }).then(res=>{  

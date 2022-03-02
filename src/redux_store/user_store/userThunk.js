@@ -5,7 +5,7 @@ import {user_details_request,user_details_success,user_details_error,all_user_de
 const fetchUserProfile = (id) => {
     return(dispatch)=>{
         user_details_request()
-        axios.put('http://localhost:5000/auth/user/update',{
+        axios.put('https://ecommerce-backend-mongodb.herokuapp.com/auth/user/update',{
             AuthToken:localStorage.getItem('Auth._Token'),
             _id:id
         })
@@ -18,7 +18,7 @@ const fetchUserProfile = (id) => {
 const fetchAllUsers = () => {
     return(dispatch)=>{
         all_user_details_request()
-        axios.post('http://localhost:5000/auth/user/allusers',{
+        axios.post('https://ecommerce-backend-mongodb.herokuapp.com/auth/user/allusers',{
             AuthToken:localStorage.getItem('Auth._Token'),
             id:localStorage.getItem('user')
         })

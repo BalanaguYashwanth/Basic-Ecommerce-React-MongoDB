@@ -27,7 +27,7 @@ export const UserScreen = () => {
   function deleteuser(id) {
     if (localStorage.getItem("Auth._Token") && localStorage.getItem("user")) {
       axios
-        .post(`http://localhost:5000/auth/user/removeuser/${id}`, {
+        .post(`https://ecommerce-backend-mongodb.herokuapp.com/auth/user/removeuser/${id}`, {
           AuthToken: localStorage.getItem("Auth._Token"),
           id: localStorage.getItem("user"),
         })
@@ -44,7 +44,7 @@ export const UserScreen = () => {
     //console.log(useradminid,updateuser)
     if (localStorage.getItem("Auth._Token") && localStorage.getItem("user")) {
         axios
-          .post(`http://localhost:5000/auth/user/updateadminuser/${useradminid}`, {
+          .post(`https://ecommerce-backend-mongodb.herokuapp.com/auth/user/updateadminuser/${useradminid}`, {
             AuthToken: localStorage.getItem("Auth._Token"),
             id: localStorage.getItem("user"),
             updateadmin:updateuser

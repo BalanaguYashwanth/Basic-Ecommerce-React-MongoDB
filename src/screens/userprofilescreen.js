@@ -42,7 +42,7 @@ export const Userprofile = () => {
   function submit(name, email) {
     setLoader(true);
     axios
-      .put("http://localhost:5000/auth/user/update", {
+      .put("https://ecommerce-backend-mongodb.herokuapp.com/auth/user/update", {
         _id: localStorage.getItem("user"),
         name: name,
         email: email,

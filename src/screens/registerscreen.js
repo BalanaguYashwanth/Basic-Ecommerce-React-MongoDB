@@ -20,7 +20,7 @@ export const Register = () => {
   function submit(name, emailAddress, password, confirmPassword) {
     if (password === confirmPassword) {
       axios
-        .post("http://localhost:5000/auth/user/register", {
+        .post("https://ecommerce-backend-mongodb.herokuapp.com/auth/user/register", {
           name: name,
           email: emailAddress,
           password: password,

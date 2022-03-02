@@ -4,7 +4,7 @@ import {fetch_shipping_address,register_shipping_address,error_shipping_address}
 function RequestshippingAddress(id){
     return(dispatch)=>{
         dispatch(fetch_shipping_address())
-        axios.get(`http://localhost:5000/shipping/fetchaddress/${id}`)
+        axios.get(`https://ecommerce-backend-mongodb.herokuapp.com/shipping/fetchaddress/${id}`)
         .then(res=>{dispatch(register_shipping_address(res.data))})
         .catch(err=>{dispatch(error_shipping_address(err))})
     }
@@ -13,7 +13,7 @@ function RequestshippingAddress(id){
 function PostshippingAddress(address,city,postalCode,country){
     return(dispatch)=>{
         dispatch(fetch_shipping_address())
-        axios.post('http://localhost:5000/shipping/registeraddress',{
+        axios.post('https://ecommerce-backend-mongodb.herokuapp.com/shipping/registeraddress',{
             _id:localStorage.getItem('user'),
             address,
             city,

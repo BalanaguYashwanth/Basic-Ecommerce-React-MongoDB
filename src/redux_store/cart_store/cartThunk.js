@@ -5,7 +5,7 @@ import { fetchproductitem,fetchCartItem } from "../thunk";
 const getCartItems = (id) => {
     return (dispatch)=>{
         dispatch(fetch_cart_items())
-         axios.get(`http://localhost:5000/cart/fetchitems/${id}`)
+         axios.get(`https://ecommerce-backend-mongodb.herokuapp.com/cart/fetchitems/${id}`)
         .then(res=>{
             dispatch(fetch_cart_items_data(res.data.cart))
             //console.log(res.data.cart)
@@ -23,7 +23,7 @@ const registerCartItems = (data) => {
     //console.log('data',data)
     return (dispatch)=>{
         dispatch(fetch_cart_items())
-         axios.post(`http://localhost:5000/cart/postitems`,{
+         axios.post(`https://ecommerce-backend-mongodb.herokuapp.com/cart/postitems`,{
             userid:localStorage.getItem('user'),
             cartitems:data,
         })

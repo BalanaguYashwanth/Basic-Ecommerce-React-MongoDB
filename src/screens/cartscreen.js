@@ -51,7 +51,7 @@ const CartScreen = () => {
     itemdata['productid'] = item._id
     itemdata['qty'] = item.qty
     console.log('itemdata',itemdata)
-    await axios.post(`http://localhost:5000/cart/removeitem`,{
+    await axios.post(`https://ecommerce-backend-mongodb.herokuapp.com/cart/removeitem`,{
       userid:localStorage.getItem('user'),
       cartitems:itemdata,
     })

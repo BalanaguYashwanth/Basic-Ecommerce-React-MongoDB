@@ -35,7 +35,7 @@ const Checkoutscreen = () => {
     setResult(data)
     if(localStorage.getItem("user") && localStorage.getItem('Auth._Token'))
     {
-      await axios.post('http://localhost:5000/cart/deletecart',{
+      await axios.post('https://ecommerce-backend-mongodb.herokuapp.com/cart/deletecart',{
         AuthToken:localStorage.getItem('Auth._Token'),
         id:localStorage.getItem('user'),
       })
